@@ -1,6 +1,6 @@
 // add current day at top of calendar (assist from https://www.webfx.com/blog/web-design/javascript-dates-moment-js/)
 (function() {
-  var now = moment();
+  var now = moment().format('dddd, MMMM Do');
   var displayMoment = document.getElementById('currentDay');
   displayMoment.innerHTML = now;
 
