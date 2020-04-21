@@ -11,6 +11,9 @@
 
 
 // color-code time blocks for past, present, future
-
+var auditHour = function(hourEl) {
+    // to ensure element is getting to the function
+    console.log(hourEl);
+  };
 
 // enter event, text saved in local storage, and saved events persist
