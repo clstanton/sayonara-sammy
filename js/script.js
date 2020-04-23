@@ -7,13 +7,27 @@
   console.log(now);
 })();
 
-// add time blocks
+var row = $("<div>").addClass("input-group");
+var timeBlock = $("<textarea>").addClass("time-block");
+var hour = $("<span>").addClass("hour");
+var saveBtn = $("<button>").addClass("saveBtn");
 
+// color-code time blocks based on past, present, future
+var auditHour = function(timeBlock) {
+  // moment object 
+  var currentTime = moment().format("LT");
+  // print out object 
+  console.log(currentTime);
 
-// color-code time blocks for past, present, future
-var auditHour = function(hourEl) {
-    // to ensure element is getting to the function
-    console.log(hourEl);
-  };
+  // apply new class if task is near/over due date
+  if (moment().isAfter(hour)) {
+    $(timeBlock).addClass("future");
+  } 
+  else if (moment().isBefore(hour)) {
+    $(timeBlock).addClass("past");
+  }
 
-// enter event, text saved in local storage, and saved events persist
+};
+
+// check current time
+auditHour(hour);
